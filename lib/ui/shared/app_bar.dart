@@ -42,7 +42,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: AppTextStyle.poppins(
           fontSize: 18,
           fontWeight: FontWeight.w500,
-          color: Color(0xFF50CD8D),
+          color: const Color(0xFF50CD8D),
         ),
       ),
     );
