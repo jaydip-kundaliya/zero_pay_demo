@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:zero_pay_demo/ui/80597/frame_80597.dart';
 import 'package:zero_pay_demo/ui/repayment/previous_transactions.dart';
 import 'package:zero_pay_demo/ui/shared/app_bar.dart';
 import 'package:zero_pay_demo/ui/shared/button_ui.dart';
 import 'package:zero_pay_demo/ui/shared/month_view.dart';
 import 'package:zero_pay_demo/ui/shared/payment_info.dart';
 import 'package:zero_pay_demo/ui/shared/payment_progress.dart';
+
+import '../../utils/app_text_style.dart';
+import '../bottom_nav/bottom_navigator.dart';
 
 class RepaymentPage extends StatelessWidget {
   const RepaymentPage({Key? key}) : super(key: key);
@@ -22,10 +26,21 @@ class RepaymentPage extends StatelessWidget {
               child: PaymentProgress(),
             ),
             SharedButton.roundedCornerButton(
-              title: 'UPGRADE LIMIT',
-              radius: 8,
-              borderColor: const Color(0xFF4776E6),
-            ),
+                child: Text(
+                  'Alternate',
+                  style: AppTextStyle.poppins(
+                    fontSize: 14,
+                    color: const Color(0xFF4776E6),
+                  ),
+                ),
+                radius: 8,
+                borderColor: const Color(0xFF4776E6),
+                onPress: () {
+                  BottomNavigator.bottomNavigatorKey.currentState?.page =
+                      const UpdateLimitPage();
+                  BottomNavigator.bottomNavigatorKey.currentState
+                      ?.setState(() {});
+                }),
             const Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 50,
@@ -57,7 +72,7 @@ class RepaymentPage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 30.0),
               child: PreviousTransactionsView(),
             ),
-            const SizedBox(height: 26),
+            const SizedBox(height: 146),
           ],
         ),
       ),

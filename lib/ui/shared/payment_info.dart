@@ -50,7 +50,13 @@ class NextPaymentView extends StatelessWidget {
               ),
               enablePayNowButton
                   ? SharedButton.roundedCornerButton(
-                      title: 'PAY NOW',
+                      child: Text(
+                        'PAY NOW',
+                        style: AppTextStyle.poppins(
+                          fontSize: 14,
+                          color: const Color(0xFF333333),
+                        ),
+                      ),
                     )
                   : const SizedBox.shrink(),
             ],

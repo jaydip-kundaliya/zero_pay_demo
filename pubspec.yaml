@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   syncfusion_flutter_gauges: ^20.1.52
   google_fonts: ^2.3.2
+  draggable_home: ^1.0.3
+  solid_bottom_sheet: ^0.1.10
 
 dev_dependencies:
   flutter_test:

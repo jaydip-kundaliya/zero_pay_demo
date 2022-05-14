@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:zero_pay_demo/utils/app_text_style.dart';
 
 class SharedButton {
   static Widget roundedCornerButton({
-    required String title,
+    required Widget child,
     double radius = 50,
     Color borderColor = const Color(0xFF50CD8D),
+    Function()? onPress,
   }) =>
       ElevatedButton(
-        onPressed: () {},
+        onPressed: onPress,
         style: ElevatedButton.styleFrom(
           primary: const Color(0xFFFFFFFF),
           elevation: 2,
@@ -19,13 +19,7 @@ class SharedButton {
             ),
           ),
         ),
-        child: Text(
-          title,
-          style: AppTextStyle.poppins(
-            fontSize: 14,
-            color: const Color(0xFF333333),
-          ),
-        ),
+        child: child,
       );
 
   static Widget circularButtonWithIcon(IconData icon) => Container(
