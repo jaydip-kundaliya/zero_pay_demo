@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:zero_pay_demo/ui/80597/month_view.dart';
 import 'package:zero_pay_demo/ui/shared/app_bar.dart';
@@ -17,8 +16,11 @@ class UpdateLimitPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const PaymentProgress(),
-            SharedButton.roundedButton(
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30.0),
+              child: PaymentProgress(),
+            ),
+            SharedButton.roundedCornerButton(
               title: 'UPGRADE LIMIT',
             ),
             const Padding(
@@ -30,42 +32,45 @@ class UpdateLimitPage extends StatelessWidget {
                 thickness: 1,
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'YOUR NEXT PAYMENT IS',
-                      style: AppTextStyle.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        color: const Color(0xFFABABAB),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'YOUR NEXT PAYMENT IS',
+                        style: AppTextStyle.poppins(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xFFABABAB),
+                        ),
                       ),
-                    ),
-                    Text(
-                      '₹ 900',
-                      style: AppTextStyle.poppins(
-                        fontSize: 38,
-                        fontWeight: FontWeight.w500,
-                        color: const Color(0xFF6FC499),
+                      Text(
+                        '₹ 900',
+                        style: AppTextStyle.poppins(
+                          fontSize: 38,
+                          fontWeight: FontWeight.w500,
+                          color: const Color(0xFF6FC499),
+                        ),
                       ),
-                    ),
-                    Text(
-                      'on april 18th',
-                      style: AppTextStyle.poppins(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: const Color(0xFFA4A4A4),
+                      Text(
+                        'on april 18th',
+                        style: AppTextStyle.poppins(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: const Color(0xFFA4A4A4),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                SharedButton.roundedButton(
-                  title: 'PAY NOW',
-                ),
-              ],
+                    ],
+                  ),
+                  SharedButton.roundedCornerButton(
+                    title: 'PAY NOW',
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 26),
             Container(
@@ -74,7 +79,7 @@ class UpdateLimitPage extends StatelessWidget {
                 top: 26,
                 bottom: 12,
               ),
-              child: MonthView(),
+              child: const MonthView(),
             ),
           ],
         ),
